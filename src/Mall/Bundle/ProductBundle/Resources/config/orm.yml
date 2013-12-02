@@ -1,0 +1,14 @@
+services:
+    mall.product_bundle.doctrine.doctrine_factory:
+        class: Mall\Bundle\ProductBundle\Doctrine\DoctrineFactory
+        arguments: [@doctrine]
+
+    mall.product_bundle.doctrine.unit_of_work:
+        class: Mall\Bundle\CoreBundle\ORM\UnitOfWorkInterface
+        factory_service: mall.product_bundle.doctrine.doctrine_factory
+        factory_method: createUnitOfWork
+
+    mall.product_bundle.repository.product:
+        class: Mall\Bundle\CoreBundle\ORM\RepositoryInterface
+        factory_service: mall.product_bundle.doctrine.doctrine_factory
+        factory_method: createProductRepository

@@ -1,0 +1,6 @@
+mall_web_frontend:
+    resource: "@MallWebFrontendBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+

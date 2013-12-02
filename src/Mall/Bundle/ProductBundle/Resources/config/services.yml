@@ -1,0 +1,4 @@
+services:
+    mall.bundle.product_bundle.service.product:
+        class: Mall\Bundle\ProductBundle\Service\ProductService
+        arguments: [@mall.product_bundle.doctrine.unit_of_work, @mall.product_bundle.repository.product]
